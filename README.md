@@ -21,6 +21,10 @@ Getting to Know Primitive Data Types - Float and Double | [Lecture 18](#section-
 Getting to Know Primitive Data Types - Char and Boolean | [Lecture 19](#section-4-lecture-19)
 Understanding Strings and Finishing Up Primitive Data Types | [Lecture 20](#section-4-lecture-20)
 Operators in Java | [Lecture 21](#section-4-lecture-21)
+**SECTION 5** | [**Section 5**](#section-5)
+Keywords and Expressions | [Lecture 24](#section-5-lecture-24)
+Method Overloading | [Lecture 29](#section-5-lecture-29)
+
 
 <!-- ################################################################################################################ -->
 <!--                                                     SECTION 2                                                    -->
@@ -65,7 +69,7 @@ public class Hello {
 
 
 <!-- ################################################################################################################ -->
-<!--                                                     SECTION 3                                                    -->
+<!--                                                     SECTION 4                                                    -->
 <!-- ################################################################################################################ -->
 
 ## SECTION 4
@@ -265,7 +269,6 @@ public class Main {
 
 ### Section 4 Lecture 21
 
-#### Java Operator Precendence Table
 [**Java Operator Precendence Table**](http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html) - http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html
 
 ![**Java Operator Precendence Table**](images/javaOperatorPrecendenceTable.png)
@@ -320,3 +323,44 @@ public class Main {
 - **&** - Bitwise AND
 - **^** - Bitwise exclusive OR
 - **|** - Bitwise inclusive OR
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 5                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 5
+
+### Section 5 Lecture 24
+
+[**Java Keywords**](https://en.wikipedia.org/wiki/List_of_Java_keywords) - https://en.wikipedia.org/wiki/List_of_Java_keywords
+
+### Section 5 Lecture 29
+
+Method Overloading allows a class to have more than one method with the same name. The redefined method can have different parameters defined to account for different use cases.
+
+#### Notes
+
+- Chaning the return type of the redefined methods, but not the parameters it takes, will throw hard error as the redefined method is not considered unique
+
+```java
+public static void main(String[] args) {
+    calculateScore(String "Wyatt", int 420);
+    calculateScore(int 420);
+    calculateScore();
+}
+
+public static int calculateScore(String playerName, int score) {
+    System.out.println("Player " + playerName + " scored " + score + " points");
+    return score * 1000;
+}
+
+public static int calculateScore(int score) {
+    System.out.println("Unnamed player scored " + score + " points");
+    return score * 1000;
+}
+
+public static int calculateScore() {
+    System.out.println("No player name, no player score.");
+    return 0;
+}
+```
