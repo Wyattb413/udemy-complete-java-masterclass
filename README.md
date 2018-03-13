@@ -268,7 +268,7 @@ public class Main {
 #### Java Operator Precendence Table
 [**Java Operator Precendence Table**](http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html) - http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html
 
-[**Java Operator Precendence Table**](images/javaOperatorPrecendenceTable.png)
+![**Java Operator Precendence Table**](images/javaOperatorPrecendenceTable.png)
 
 #### Operators
 
