@@ -20,6 +20,7 @@ Getting to Know Primitive Data Types - The Bytte, Short, Int and Long | [Lecture
 Getting to Know Primitive Data Types - Float and Double | [Lecture 18](#section-4-lecture-18)
 Getting to Know Primitive Data Types - Char and Boolean | [Lecture 19](#section-4-lecture-19)
 Understanding Strings and Finishing Up Primitive Data Types | [Lecture 20](#section-4-lecture-20)
+Operators in Java | [Lecture 21](#section-4-lecture-21)
 
 <!-- ################################################################################################################ -->
 <!--                                                     SECTION 2                                                    -->
@@ -261,3 +262,61 @@ public class Main {
     }
 }
 ```
+
+### Section 4 Lecture 21
+
+#### Java Operator Precendence Table
+[**Java Operator Precendence Table**](http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html) - http://cs.bilkent.edu.tr/~guvenir/courses/CS101/op_precedence.html
+
+[**Java Operator Precendence Table**](images/javaOperatorsPrecendenceTable.png)
+
+#### Operators
+
+##### Simple Assignment Operator
+
+- **=** - Simple assignment operator
+
+##### Arithmetic Operators
+
+- **+** - Additive operator (also used for String concatenation)
+- **-** - Subtraction operator
+- **\*** - Multiplication operator
+- **/** - Division operator
+- **%** - Remainder operator
+
+##### Unary Operators
+
+- **+** - Unary plus operator; indicates positive value (numbers are positive without this, however)
+- **-** - Unary minus operator; negates an expression
+- **++** - Increment operator; incrementsa value by 1
+- **--** - Decrement operator; decrements a value by 1
+- **!** - Logical complement operator; inverts the value of a boolean
+
+##### Equality and Relational Operators
+
+- **==** - Equal to
+- **!=** - Not equal to
+- **>** - Greater than
+- **>=** - Greater than or equal to
+- **<** - Less than
+- **<=** - Less than or equal to
+
+##### Conditional Operators
+
+- **&&** - Conditional-AND
+- **||** - Conditional-OR
+- **?:** - Ternary (shorthand for if-then-else statement)
+
+##### Type Comparison Operator
+
+- **instanceof** - Compares an object to a specified type 
+
+##### Bitwise and Bit Shift Operators
+
+- **~** - Unary bitwise complement
+- **<<** - Signed left shift
+- **>>** - Signed right shift
+- **>>>** - Unsigned right shift
+- **&** - Bitwise AND
+- **^** - Bitwise exclusive OR
+- **|** - Bitwise inclusive OR
