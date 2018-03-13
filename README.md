@@ -96,11 +96,11 @@ public class Hello {
 #### Notes
 
 - **literal** - A literal is a raw value that is typed such as 1234, rather (a * b) is an **expression**
-- **2_147_483_647** - Since Java 7 underscorea between number sets is supported
+- **2_147_483_647** - Since Java 7 underscores between number sets is supported
 - ``byte`` has a width of **8**
 - ``short`` has a width of **16**
 - ``int`` has a width of **32**
-- ``long`` has a width of **64** and it's value **SHOULD** end with either l or L to signify that it is a ``long``
+- ``long`` has a width of **64** and it's value **SHOULD** end with either l (lower case L) or L to signify that it is a ``long``
 - ``long`` type supports ``int`` type the following expression does **NOT** require casting:
 
 ```java
