@@ -24,6 +24,10 @@ Operators in Java | [Lecture 21](#section-4-lecture-21)
 **SECTION 5** | [**Section 5**](#section-5)
 Keywords and Expressions | [Lecture 24](#section-5-lecture-24)
 Method Overloading | [Lecture 29](#section-5-lecture-29)
+**SECTION 6** | [**Section 6**](#section-6)
+The Switch Statement | [Lecture 31](#section-6-lecture-31)
+The For Statement | [Lecture 32](#section-6-lecture-32)
+The While and Do While Statements | [Lecture 33](#section-6-lecture-33)
 
 
 <!-- ################################################################################################################ -->
@@ -363,4 +367,74 @@ public static int calculateScore() {
     System.out.println("No player name, no player score.");
     return 0;
 }
+```
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 6                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 6
+
+### Section 6 Lecture 31 - The Switch Statement
+
+#### Note
+
+- You chain `case`s together to execute the same code for several `case`s:
+
+```java
+    int switchValue = 6;
+
+    switch(switchValue) {
+        case 1:
+            System.out.println("Value was 1");
+            break;
+
+        case 2:
+            System.out.println("Value was 2");
+            break;
+
+        case 3:case 4:case 5:
+            System.out.println("was a 3 or a 4, or a 5");
+            System.out.println("Actually it was a " + switchValue);
+            break;
+
+        default:
+            System.out.println("Was not 1,2,3, 4 or 5");
+            break;
+    }
+```
+
+### Section 6 Lecture 32 - The For Statement
+
+### Note
+
+- The for loop is structured like so: `for (variable; termination; increment)`
+
+```java
+    for (int i=2; i <= n/2; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+```
+
+### Section 6 Lecture 33 - The While and Do While Statements
+
+```java
+    int count = 6;
+    while(count != 6) {
+        System.out.println("Count value is " + count);
+        count++;
+    }
+
+    count = 6;
+    do {
+        System.out.println("Count value was " + count);
+        count++;
+
+        if(count >100) {
+            break;
+        }
+
+    } while(count != 6);
 ```
