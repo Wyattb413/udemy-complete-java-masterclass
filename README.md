@@ -28,6 +28,11 @@ Method Overloading | [Lecture 29](#section-5-lecture-29)
 The Switch Statement | [Lecture 31](#section-6-lecture-31)
 The For Statement | [Lecture 32](#section-6-lecture-32)
 The While and Do While Statements | [Lecture 33](#section-6-lecture-33)
+**SECTION 7** | [**Section 7**](#section-7)
+Classes Part 1 | [Lecture 35](#section-7-lecture-35)
+Classes Part 2 | [Lecture 36](#section-7-lecture-36)
+Constructors Part 1 | [Lecture 37](#section-7-lecture-37)
+Constructors Part 2 | [Lecture 38](#section-7-lecture-38)
 
 
 <!-- ################################################################################################################ -->
@@ -375,7 +380,9 @@ public static int calculateScore() {
 
 ## SECTION 6
 
-### Section 6 Lecture 31 - The Switch Statement
+### Section 6 Lecture 31
+
+#### The Switch Statement
 
 #### Note
 
@@ -404,7 +411,9 @@ public static int calculateScore() {
     }
 ```
 
-### Section 6 Lecture 32 - The For Statement
+### Section 6 Lecture 32
+
+#### The For Statement
 
 ### Note
 
@@ -418,7 +427,9 @@ public static int calculateScore() {
     }
 ```
 
-### Section 6 Lecture 33 - The While and Do While Statements
+### Section 6 Lecture 33
+
+#### The While and Do While Statements
 
 ```java
     int count = 6;
@@ -437,4 +448,104 @@ public static int calculateScore() {
         }
 
     } while(count != 6);
+```
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 7                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 7
+
+### Section 7 Lecture 35
+
+#### Classes Part 1
+
+#### Notes
+
+- `public` accessor allows classes to call the `public` `method`
+- `private` accessor only allows `method`s inside the same `class` to call the `private` `method`
+- `protected` accessor only allows `class`es inside the same `package` to call the `method`
+
+### Section 7 Lecture 36
+
+#### Classes Part 2
+
+#### Notes
+
+- `this` reserved word that allows you to reference the `class`es methods and properties from within the `class`
+- `properties` defined on a `class` will generally each have theirown `getters` and `setters`
+
+
+```java
+public class Car {
+
+    private int doors;
+    private int wheels;
+    private String model;
+    private String engine;
+    private String color;
+
+    public void setModel(String model) {
+        String lowerCasedModel = model.toLowerCase();
+
+        if (lowerCasedModel.equals("240z") || lowerCasedModel.equals("gti")) {
+            this.model = model;
+        } else {
+            this.model = "Unknown";
+        }
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+}
+```
+
+### Section 7 Lecture 37
+
+#### Constructors Part 1
+
+#### Notes
+
+- `contructor`s are used to configure the new instance of a `class` when it's first initialized
+- You can have multiple `constructor`s defined in a class
+
+```java
+    public BankAccount() {
+        this("1234567890",0.0,
+                "Default Name","Default Email","Default Phone Number");
+    }
+
+    public BankAccount(String accountNumber, double balance, String customerName, String email,
+                        String phoneNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+```
+
+### Section 7 Lecture 38
+
+#### Constructors Part 2
+
+#### Notes
+
+- `constructor`s can call other `constructor`s (can be used to initialize an instance of a `class` with defaults if an empty instance of the `class` was initialized)
+
+```java
+    public VIPCustomer() {
+        this("Default Name", 10_000, "No Email Provided");
+    }
+
+    public VIPCustomer(String name, String emailAddress) {
+        this(name, 10_000, emailAddress);
+    }
+
+    public VIPCustomer(String name, double creditLimit, String emailAddress) {
+        this.name = name;
+        this.creditLimit = creditLimit;
+        this.emailAddress = emailAddress;
+    }
 ```
