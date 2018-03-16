@@ -33,6 +33,10 @@ Classes Part 1 | [Lecture 35](#section-7-lecture-35)
 Classes Part 2 | [Lecture 36](#section-7-lecture-36)
 Constructors Part 1 | [Lecture 37](#section-7-lecture-37)
 Constructors Part 2 | [Lecture 38](#section-7-lecture-38)
+Inheritance Part 1 | [Lecture 39](#section-7-lecture-39)
+Inheritance Part 2 | [Lecture 40](#section-7-lecture-40)
+Reference vs Object vs Instance vs Class | [Lecture 41](#section-7-lecture-41)
+This vs Super | [Lecture 42](#section-7-lecture-42)
 
 
 <!-- ################################################################################################################ -->
@@ -549,3 +553,47 @@ public class Car {
         this.emailAddress = emailAddress;
     }
 ```
+
+### Section 7 Lecture 39
+
+#### Inheritance Part 1
+
+#### Notes
+
+- `extends` is a reserved word that allows a class to inherit from another `class`
+- `super` allows the accessing of `properties` and `method`s that belong to the `parent` `class`
+
+### Section 7 Lecture 40
+
+#### Inheritance Part 2
+
+#### Notes
+
+- `@Override` allows you to `Override` a method defined in the `parent` `class`
+- When calling a `method` that exists on the `parent` from the `child`, best practice is to call it without using `super`. This avoids any refactoring if you later decide to `Override` the `parent`'s method inside the `child`, because `super.methodName` will **alway** call the `parent`'s method, even if it was overriden in the `child`
+
+### Section 7 Lecture 41
+
+#### Reference vs Object vs Instance vs Class
+
+#### Notes
+
+- `class` - can be thought of as a blueprint for a building (you can build as many buildings as you want based off the blueprint)
+- `instance` - each building built off the blueprint (`class`) is known as an `instance`, the act of creating an `instance` from a `class` is called `instantiating`
+- `reference` - each building you build from the blueprint (`class`) has a location (`reference`) that references that specific building
+- `reference`s can be passed as `parameter`s to `contructor`s and `method`s
+
+### Section 7 Lecture 42
+
+#### This vs Super
+
+#### Notes
+
+- `super` - is a keyword used to access/call the `parent` `class` members (`variable`s and `method`s)
+- `this` - is a keyword used to call the current `class` members (`varible`s and `method`s). `this` is required when we have a `parameter` with the same name as an `instance` `varible`
+- `this()` can only be used inside of a `contructor`, and it **must** be the first statement in a `constructor` (it's primairly used in `constructor` chainging - calling one `constructor` from another `constructor`)
+- `super()` is used to call the `parent`'s `constructor`
+- a default `super()` is added to each `extended` `class` that calls the `parent`'s no-argument `constructor`
+- `super()` **must** be the first statement in each `constructor`
+- `super` and `this` can be used anywhere in a `class` except for `static` areas
+- **IMPORTANT** a `constructor` can have a call to `super()` or `this()`, but it can **NOT** have both
