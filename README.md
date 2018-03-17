@@ -37,6 +37,9 @@ Inheritance Part 1 | [Lecture 39](#section-7-lecture-39)
 Inheritance Part 2 | [Lecture 40](#section-7-lecture-40)
 Reference vs Object vs Instance vs Class | [Lecture 41](#section-7-lecture-41)
 This vs Super | [Lecture 42](#section-7-lecture-42)
+**SECTION 8** | [**Section 8**](#section-8)
+Composition Part 1 | [Lecture 46](#section-8-lecture-46)
+Polymorphism | [Lecture 50](#section-8-lecture-50)
 
 
 <!-- ################################################################################################################ -->
@@ -563,6 +566,90 @@ public class Car {
 - `extends` is a reserved word that allows a class to inherit from another `class`
 - `super` allows the accessing of `properties` and `method`s that belong to the `parent` `class`
 
+#### Parent Class
+
+```java
+public class Anim]al {
+
+    private String name;
+    private int brain;
+    private int body;
+    private int size;
+    private int weight;
+
+    public Animal(String name, int brain, int body, int size, int weight) {
+        this.name = name;
+        this.brain = brain;
+        this.body = body;
+        this.size = size;
+        this.weight = weight;
+    }
+
+    public void eat() {
+        System.out.println("Animal.eat() called");
+    }
+
+    public void move() {
+
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBrain() {
+        return brain;
+    }
+
+    public int getBody() {
+        return body;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+}
+```
+
+#### Child Class (class that inherits)
+
+```java
+    public class Dog extends Animal {
+
+        private int eyes;
+        private int legs;
+        private int tail;
+        private int teeth;
+        private String coat;
+
+        public Dog(String name, int size, int weight, int eyes, int legs, int tail, int teeth, String coat) {
+            super(name, 1, 1, size, weight);
+            this.eyes = eyes;
+            this.legs = legs;
+            this.tail = tail;
+            this.teeth = teeth;
+            this.coat = coat;
+        }
+
+        private void chew() {
+            System.out.println("Dog.chew() called");
+        }
+
+        @Override
+        public void eat() {
+            System.out.println("Dog.eat() called");
+            chew();
+            super.eat();
+        }
+    }
+```
+
 ### Section 7 Lecture 40
 
 #### Inheritance Part 2
@@ -571,6 +658,113 @@ public class Car {
 
 - `@Override` allows you to `Override` a method defined in the `parent` `class`
 - When calling a `method` that exists on the `parent` from the `child`, best practice is to call it without using `super`. This avoids any refactoring if you later decide to `Override` the `parent`'s method inside the `child`, because `super.methodName` will **alway** call the `parent`'s method, even if it was overriden in the `child`
+
+#### Parent Class
+
+```java
+public class Animal {
+
+    private String name;
+    private int brain;
+    private int body;
+    private int size;
+    private int weight;
+
+    public Animal(String name, int brain, int body, int size, int weight) {
+        this.name = name;
+        this.brain = brain;
+        this.body = body;
+        this.size = size;
+        this.weight = weight;
+    }
+
+    public void eat() {
+        System.out.println("Animal.eat() called");
+
+    }
+
+    public void move(int speed) {
+        System.out.println("Animal.move() called.  Animal is moving at " +speed);
+
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBrain() {
+        return brain;
+    }
+
+    public int getBody() {
+        return body;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+}
+```
+
+#### Child Class 1
+
+```java
+public class Dog extends Animal {
+
+    private int eyes;
+    private int legs;
+    private int tail;
+    private int teeth;
+    private String coat;
+
+    public Dog(String name, int size, int weight, int eyes, int legs, int tail, int teeth, String coat) {
+        super(name, 1, 1, size, weight);
+        this.eyes = eyes;
+        this.legs = legs;
+        this.tail = tail;
+        this.teeth = teeth;
+        this.coat = coat;
+    }
+
+    private void chew() {
+        System.out.println("Dog.chew() called");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Dog.eat() called");
+        chew();
+        super.eat();
+    }
+
+    public void walk() {
+        System.out.println("Dog.walk() called");
+        super.move(5);
+    }
+
+    public void run() {
+        System.out.println("Dog.run() called");
+        move(10);
+
+    }
+
+    private void moveLegs(int speed) {
+        System.out.println("Dog.moveLegs() called");
+    }
+    @Override
+    public void move(int speed) {
+        System.out.println("Dog.move() called");
+        moveLegs(speed);
+        super.move(speed);
+    }
+}
+```
 
 ### Section 7 Lecture 41
 
@@ -597,3 +791,276 @@ public class Car {
 - `super()` **must** be the first statement in each `constructor`
 - `super` and `this` can be used anywhere in a `class` except for `static` areas
 - **IMPORTANT** a `constructor` can have a call to `super()` or `this()`, but it can **NOT** have both
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 8                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 8
+
+### Section 8 Lecture 46
+
+#### Composition Part 1
+
+#### Notes
+
+- `composition` is used when a `class` needs to inherit from multiple other `class`es
+
+#### Parent Class 1 - Motherboard
+
+```java
+public class Motherboard {
+
+    private String model;
+    private String manufacturer;
+    private int ramSlots;
+    private int cardSlots;
+    private String bios;
+
+    public Motherboard(String model, String manufacturer, int ramSlots, int cardSlots, String bios) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.ramSlots = ramSlots;
+        this.cardSlots = cardSlots;
+        this.bios = bios;
+    }
+
+    public void loadProgram(String programName) {
+        System.out.println("Program " + programName + " is now loading...");
+    }
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getRamSlots() {
+        return ramSlots;
+    }
+
+    public int getCardSlots() {
+        return cardSlots;
+    }
+
+    public String getBios() {
+        return bios;
+    }
+}
+```
+
+#### Parent Class 2 - Monitor
+
+```java
+public class Monitor {
+    private String model;
+    private String manufacturer;
+    private int size;
+    private Resolution nativeResolution;
+
+    public Monitor(String model, String manufacturer, int size, Resolution nativeResolution) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.size = size;
+        this.nativeResolution = nativeResolution;
+    }
+
+    public void drawPixelAt(int x, int y, String color) {
+        System.out.println("Drawing pixel at " + x + "," + y + " in colour " + color);
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Resolution getNativeResolution() {
+        return nativeResolution;
+    }
+}
+```
+
+#### Parent Class 3 - Case
+
+```java
+public class Case {
+    private String model;
+    private String manufacturer;
+    private String powerSupply;
+    private Dimensions dimensions;
+
+    public Case(String model, String manufacturer, String powerSupply, Dimensions dimensions) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.powerSupply = powerSupply;
+        this.dimensions = dimensions;
+    }
+
+    public void pressPowerButton() {
+        System.out.println("Power button pressed");
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public String getPowerSupply() {
+        return powerSupply;
+    }
+
+    public Dimensions getDimensions() {
+        return dimensions;
+    }
+}
+```
+
+#### Child Class (class that utilizes composition) - PC
+
+```java
+public class PC {
+    private Case theCase;
+    private Monitor monitor;
+    private Motherboard motherboard;
+
+    public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
+        this.theCase = theCase;
+        this.monitor = monitor;
+        this.motherboard = motherboard;
+    }
+
+    public Case getTheCase() {
+        return theCase;
+    }
+
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public Motherboard getMotherboard() {
+        return motherboard;
+    }
+}
+```
+
+### Section 8 Lecture 50
+
+#### Polymorphism
+
+#### Notes
+
+- `polymorphism`: Polymorphism allows the expression of some sort of contract, with potentially many types implementing that contract (whether through class inheritance or not) in different ways, each according to their own purpose. Code using that contract should not(*) have to care about which implementation is involved, only that the contract will be obeyed.
+
+```java
+class Movie {
+    private String name;
+
+    public Movie(String name) {
+        this.name = name;
+    }
+
+    public String plot() {
+        return "No plot here";
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Jaws extends Movie {
+    public Jaws() {
+        super("Jaws");
+    }
+
+    public String plot() {
+        return "A shark eats lots of people";
+    }
+}
+
+class IndependenceDay extends Movie {
+
+    public IndependenceDay() {
+        super("Independence Day");
+    }
+
+    @Override
+    public String plot() {
+        return "Aliens attempt to take over planet earth";
+    }
+}
+
+class MazeRunner extends Movie {
+
+    public MazeRunner() {
+        super("Maze Runner");
+    }
+
+    @Override
+    public String plot() {
+        return "Kids try and escape a maze";
+    }
+}
+
+class StarWars extends Movie {
+    public StarWars() {
+        super("Star Wars");
+    }
+
+    @Override
+    public String plot() {
+        return "Imperial Forces try to take over the universe";
+    }
+}
+
+class Forgetable extends Movie {
+    public Forgetable() {
+        super("Forgetable");
+    }
+
+    // No plot method
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+	    for(int i=1; i<11; i++) {
+            Movie movie = randomMovie();
+            System.out.println("Movie #" + i +
+                            " : " + movie.getName() + "\n" +
+                            "Plot: " + movie.plot() + "\n");
+        }
+    }
+
+    public static Movie randomMovie() {
+        int randomNumber = (int) (Math.random() * 5) +1;
+        System.out.println("Random number generated was: " + randomNumber);
+        switch (randomNumber) {
+            case 1:
+                return new Jaws();
+            case 2:
+                return new IndependenceDay();
+            case 3:
+                return new MazeRunner();
+            case 4:
+                return new StarWars();
+            case 5:
+                return new Forgetable();
+        }
+
+        return null;
+    }
+}
+```
