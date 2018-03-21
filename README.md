@@ -40,6 +40,7 @@ This vs Super | [Lecture 42](#section-7-lecture-42)
 **SECTION 8** | [**Section 8**](#section-8)
 Composition Part 1 | [Lecture 46](#section-8-lecture-46)
 Polymorphism | [Lecture 50](#section-8-lecture-50)
+**SECTION 9** | [**Section 9**](#section-9)
 
 
 <!-- ################################################################################################################ -->
@@ -1064,3 +1065,18 @@ public class Main {
     }
 }
 ```
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 9                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 9
+
+### Section 9 Lecture 54
+
+#### Arrays
+
+#### Notes
+
+- `array`s are declared with a specified amount of elements e.g. `int[] myIntArray = new int[10]`
+- You can also declare an `array` like such: `int[] myIntArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};`
