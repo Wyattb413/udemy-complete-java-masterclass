@@ -41,6 +41,7 @@ This vs Super | [Lecture 42](#section-7-lecture-42)
 Composition Part 1 | [Lecture 46](#section-8-lecture-46)
 Polymorphism | [Lecture 50](#section-8-lecture-50)
 **SECTION 9** | [**Section 9**](#section-9)
+Arrays | [Lecture 54](#section-9-lecture-54)
 
 
 <!-- ################################################################################################################ -->
