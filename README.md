@@ -4,7 +4,6 @@
 
 [**IntelliJ IDEA**](http://www.jetbrains.com/idea/download/#section=linux) - http://www.jetbrains.com/idea/download/#section=linux
 
-
 ## Table of Contents
 
 Lecture Topic | Link
@@ -42,7 +41,6 @@ Composition Part 1 | [Lecture 46](#section-8-lecture-46)
 Polymorphism | [Lecture 50](#section-8-lecture-50)
 **SECTION 9** | [**Section 9**](#section-9)
 Arrays | [Lecture 54](#section-9-lecture-54)
-
 
 <!-- ################################################################################################################ -->
 <!--                                                     SECTION 2                                                    -->
@@ -84,7 +82,6 @@ public class Hello {
     }
 }
 ```
-
 
 <!-- ################################################################################################################ -->
 <!--                                                     SECTION 4                                                    -->
@@ -165,7 +162,7 @@ public class Main {
 
 #### Casting
 
-When trying to perform an expression such as 
+When trying to perform an expression such as
 
 ```java
 int myTotalIntValue = (myMinIntValue/2)
@@ -330,7 +327,7 @@ public class Main {
 
 ##### Type Comparison Operator
 
-- **instanceof** - Compares an object to a specified type 
+- **instanceof** - Compares an object to a specified type
 
 ##### Bitwise and Bit Shift Operators
 
@@ -483,7 +480,6 @@ public static int calculateScore() {
 
 - `this` reserved word that allows you to reference the `class`es methods and properties from within the `class`
 - `properties` defined on a `class` will generally each have theirown `getters` and `setters`
-
 
 ```java
 public class Car {
@@ -1038,7 +1034,7 @@ class Forgetable extends Movie {
 public class Main {
 
     public static void main(String[] args) {
-	    for(int i=1; i<11; i++) {
+        for(int i=1; i<11; i++) {
             Movie movie = randomMovie();
             System.out.println("Movie #" + i +
                             " : " + movie.getName() + "\n" +
